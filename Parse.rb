@@ -1,7 +1,7 @@
 require 'net/http'
 require 'open-uri'
 #part of base library
-open("http://s3.amazonaws.com/tcmg412/new+1") {|f|
+open("http://s3.amazonaws.com/tcmg412/HTTPLOG") {|f|
   f.each_line {|line| p line}
 }
 
@@ -9,7 +9,7 @@ open("http://s3.amazonaws.com/tcmg412/new+1") {|f|
 
 
 
-file=New 1
+file=HTTPLOG
 count = 0
 loop do
 	/GET/.match(file)
