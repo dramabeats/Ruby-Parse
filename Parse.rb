@@ -1,7 +1,7 @@
 require 'net/http'
 require 'open-uri'
 #part of base library
-open("http://s3.amazonaws.com/tcmg412-fall2016/http_access_log") {|f|
+open("http://drive.google.com/file/d/0B1nKMV6edDrtaVJ0WXF2Z0E3NG8/view?usp=sharing") {|f|
   f.each_line {|line| p line}
 }
 
