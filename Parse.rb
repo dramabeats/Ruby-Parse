@@ -12,8 +12,13 @@ loop do
 	line=HTTPLOG.readline
 
 	if line =~ /GET/ then
-		count +=1
+		count +=1 
+	end
+	
+	if HTTPLOG.eof then
+		break
 	end
 
-end
 
+end
+print count
