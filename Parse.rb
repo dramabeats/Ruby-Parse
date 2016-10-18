@@ -1,11 +1,9 @@
 require 'net/http'
+require 'open-uri'
 #part of base library
-uri = URI('https://s3.amazonaws.com/tcmg412-fall2016/http_access_log')
-
-Net::HTTP.start(uri.host, uri.port) do |http|
-  request = Net::HTTP::Get.new uri
-
-  response = http.request request # Net::HTTPResponse object
+open(" https://s3.amazonaws.com/tcmg412-fall2016/http_access_log") {|f|
+  f.each_line {|line| p line}
+}
 end
  
 
