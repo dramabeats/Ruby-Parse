@@ -5,13 +5,13 @@ require 'open-uri'
 HTTPLOG=open ("http://s3.amazonaws.com/tcmg412/HTTPLOG") 
 
  
-#Search file for "get" and count how many
+#Search file for "get" and "parse" and count how many
 
 count = 0
 loop do
 	line=HTTPLOG.readline
 
-	if line =~ /GET/ then
+	if line =~ /GET|POST/ then
 		count +=1 
 	end
 	
