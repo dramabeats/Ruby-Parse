@@ -12,12 +12,19 @@ redirects=0
 unsuccessful=0
 filenumbers = Hash.new(0)
 
-#scan for most/least requested file 
+#open files for each month
 
-
-
-
-
+Jan = open("Jan.txt", "w") 
+Feb = open("Feb.txt", "w") 
+Mar = open("Mar.txt", "w") 
+Apr = open("Apr.txt", "w") 
+May = open("May.txt", "w") 
+Jun = open("Jun.txt", "w")    
+Jul = open("Jul.txt", "w") 
+Aug = open("Aug.txt", "w") 
+Sep = open("Sep.txt", "w") 
+Nov = open("Nov.txt", "w") 
+Dec = open("Dec.txt", "w") 
 
 
 
@@ -44,11 +51,66 @@ loop do
 		unsuccessful +=1 
 		end
 		
+	#regex to find filenames
+	
 	findfile = line[/[a-zA-Z0-9]+\.[a-zA-Z1-9]+/]
 		filenumbers [findfile] +=1
 		
+		#Regex to find months and write entire line to relevant file
+			
+			if line =~ /Jan/ then
+		Jan.syswrite(line)
+	end
+			if line =~ /Feb/ then
+		Feb.syswrite(line)
+	end
 	
+			if line =~ /Mar/ then
+		Mar.syswrite(line)
+	end
 		
+		
+			if line =~ /Apr/ then
+		Apr.syswrite(line)
+	end
+		
+		
+		
+			if line =~ /May/ then
+		May.syswrite(line)
+	end
+		
+		
+			if line =~ /Jun/ then
+		Jun.syswrite(line)
+	end
+		
+			if line =~ /Jul/ then
+		Jul.syswrite(line)
+	end
+		
+		
+			if line =~ /Aug/ then
+		Aug.syswrite(line)
+	end
+		
+		
+			if line =~ /Sep/ then
+		Sep.syswrite(line)
+	end
+		
+		
+		if line =~ /Oct/ then
+		Oct.syswrite(line)
+	end
+	
+		if line =~ /Nov/ then
+		Nov.syswrite(line)
+	end
+	
+		if line =~ /Dec/ then
+		Dec.syswrite(line)
+	end
 	
 	if HTTPLOG.eof then
 		break
@@ -59,10 +121,6 @@ end
 
 
 hashsorted = filenumbers.sort
-
-
-
-
 
 #output results
 puts "The total number of requests is" 
@@ -82,3 +140,17 @@ puts hashsorted.max
 
 puts "The lest requested file is"
 puts hashsorted.min
+
+#close files
+Jan.close
+Feb.close
+Mar.close
+Apr.close
+May.close
+Jun.close
+Jul.close
+Aug.close
+Sep.close
+Oct.close
+Nov.close
+Dec.close
