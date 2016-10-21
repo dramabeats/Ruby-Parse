@@ -54,6 +54,7 @@ loop do
 		
 	#regex to find filenames
 	
+		#line 58 collab with Alex E.
 	if line =~ /[a-zA-Z0-9]+\.[a-zA-Z1-9]+/ then
 		findfile = line[/[a-zA-Z0-9]+\.[a-zA-Z1-9]+/]
 		filenumbers [findfile] +=1
