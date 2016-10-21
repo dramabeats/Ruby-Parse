@@ -136,7 +136,7 @@ puts  requests/52.0
 puts "The most requested file is"
 puts hashsorted.max
 
-puts "The lest requested file is"
+puts "The least requested file is"
 puts hashsorted.min
 
 #close files
