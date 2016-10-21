@@ -134,10 +134,14 @@ puts "The average number of requests per week is about"
 puts  requests/52.0
 
 puts "The most requested file is"
-puts hashsorted.max
+
+puts (filenumbers.max_by { |filename, requests| requests }) 
 
 puts "The least requested file is"
-puts hashsorted.min
+
+puts (filenumbers.min_by { |filename, requests| requests })
+
+#line 138 and 142 retrieved from http://stackoverflow.com/questions/1359370/how-do-you-find-a-min-max-with-ruby author: Aaron-coding
 
 #close files
 Jan.close
