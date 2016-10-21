@@ -2,7 +2,7 @@ require 'net/http'
 require 'open-uri'
 
 #Download file 
-HTTPLOG=open ("https://s3.amazonaws.com/tcmg412-fall2016/http_access_log") 
+HTTPLOG=open ("http://s3.amazonaws.com/tcmg412-fall2016/http_access_log") 
 
  
 
@@ -27,7 +27,7 @@ Oct = open("Oct.txt", "w")
 Nov = open("Nov.txt", "w") 
 Dec = open("Dec.txt", "w") 
 
-Test = open("Test.txt", "w") 
+
 
 
 loop do
@@ -54,9 +54,11 @@ loop do
 		
 	#regex to find filenames
 	
-	findfile = line[/[a-zA-Z0-9]+\.[a-zA-Z1-9]+/]
+	if line =~ /[a-zA-Z0-9]+\.[a-zA-Z1-9]+/ then
+		findfile = line[/[a-zA-Z0-9]+\.[a-zA-Z1-9]+/]
 		filenumbers [findfile] +=1
-
+	end 
+	
 		
 		#Regex to find months and write entire line to relevant file
 			
